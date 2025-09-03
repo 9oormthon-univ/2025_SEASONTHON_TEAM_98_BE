@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starter: 웹 애플리케이션 개발에 필요한 기본 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Thymeleaf Starter: HTML 템플릿 사용을 위한 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    // Spring Data JPA Starter: 데이터베이스 ORM(객체-관계 매핑)을 위한 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Spring Security Starter: 보안 프레임워크 사용을 위한 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // OAuth2 Client Starter: 구글, 카카오 등 OAuth2 소셜 로그인 클라이언트 기능
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+    // MySQL Connector: MySQL 데이터베이스 연결 드라이버
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // Lombok: Getter/Setter 등 반복적인 코드 자동 생성
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Test 라이브러리
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

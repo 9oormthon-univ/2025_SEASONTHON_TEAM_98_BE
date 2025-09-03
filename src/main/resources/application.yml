@@ -1,0 +1,38 @@
+spring:
+  # MySQL 데이터베이스 설정
+  datasource:
+    url: jdbc:mysql://localhost:3306/login?useSSL=false&serverTimezone=Asia/Seoul
+    username: uni4
+    password: 12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update # 개발용: 엔티티 기반으로 테이블 자동 생성/수정
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Spring Security OAuth2 클라이언트 설정
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 339251245515-huhlklc77maqfr9mq2aie131td07l308.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - profile
+              - email
+          kakao:
+            client-id: f2c55a4afe421cc4192bc10d6f452b4b
+#            client-secret: YOUR_KAKAO_CLIENT_SECRET
+            redirect-uri: ${spring.security.oauth2.client.registration.kakao.redirect-uri-template}
+            authorization-grant-type: authorization_code
+            client-name: Kakao
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-name-attribute: id
