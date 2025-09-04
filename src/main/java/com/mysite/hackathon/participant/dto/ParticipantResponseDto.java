@@ -20,5 +20,5 @@ public class ParticipantResponseDto {
                 .meetingId(participant.getMeeting().getId())
                 .joinedAt(participant.getJoinedAt())
                 .build();
-    }
+    }//모임에 참여/취소 결과 응답할 때 사용. join API가 성공하면 참가자 ID, 유저 ID, 모임 ID, 참여 시간을 응답
 }
