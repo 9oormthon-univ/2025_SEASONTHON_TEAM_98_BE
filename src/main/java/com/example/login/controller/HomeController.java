@@ -15,6 +15,6 @@ public class HomeController {
             String email = oauth2User.getAttribute("email");
             model.addAttribute("email", email);
         }
-        return "home"; // home.html을 반환
+        return "home";
     }
 }

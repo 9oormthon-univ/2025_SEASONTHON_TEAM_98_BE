@@ -2,15 +2,42 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>소셜 로그인</title>
+    <title> 로그인</title>
 </head>
 <body>
 <h1>소셜 로그인</h1>
+
+<!-- 카카오 로그인 버튼 -->
+<div>
+    <a href="/oauth2/authorization/kakao">Kakao 로그인</a>
+</div>
+<br>
+
+<!-- 구글 로그인 버튼 -->
 <div>
     <a href="/oauth2/authorization/google">Google 로그인</a>
 </div>
+<br>
+
+<!-- 직접 로그인 폼 -->
+<form action="/login" method="post">
+    <div>
+        <label for="username">이메일:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <button type="submit">로그인</button>
+    </div>
+</form>
+<br>
+
+<!-- 회원가입 링크 -->
 <div>
-    <a href="/oauth2/authorization/kakao">Kakao 로그인</a>
+    <span>계정이 없으시다면 </span><a href="/signup">회원가입</a>
 </div>
 </body>
 </html>

@@ -1,13 +1,16 @@
 spring:
   # MySQL 데이터베이스 설정
   datasource:
+    # SQL 쿼리에서 'localhost'를 사용했으므로, 여기도 'localhost'를 사용합니다.
     url: jdbc:mysql://localhost:3306/login?useSSL=false&serverTimezone=Asia/Seoul
-    username: root
-    password: 12345
+    # MySQL Workbench에서 만든 사용자 이름과 동일해야 합니다.
+    username: uni4
+    # MySQL Workbench에서 만든 비밀번호와 동일해야 합니다.
+    password: uni41234
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update # 개발용: 엔티티 기반으로 테이블 자동 생성/수정
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -20,14 +23,14 @@ spring:
         registration:
           google:
             client-id: 339251245515-huhlklc77maqfr9mq2aie131td07l308.apps.googleusercontent.com
-            client-secret: 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
+            client-secret: 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
             scope:
               - profile
               - email
           kakao:
             client-id: f2c55a4afe421cc4192bc10d6f452b4b
-#            client-secret: YOUR_KAKAO_CLIENT_SECRET
-            redirect-uri: ${spring.security.oauth2.client.registration.kakao.redirect-uri-template}
+            #            client-secret: YOUR_KAKAO_CLIENT_SECRET
+            redirect-uri: http://localhost:8080/login/oauth2/code/kakao
             authorization-grant-type: authorization_code
             client-name: Kakao
         provider:

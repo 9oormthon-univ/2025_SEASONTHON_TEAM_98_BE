@@ -3,6 +3,7 @@ package com.example.login.security;
 import com.example.login.model.User;
 import com.example.login.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
@@ -15,6 +16,8 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
+@SuppressWarnings("unchecked")
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
     private final UserRepository userRepository;
@@ -36,12 +39,15 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         } else if (registrationId.equals("kakao")) {
             oauth2Id = String.valueOf(oAuth2User.getAttribute("id"));
             Map<String, Object> kakaoAccount = oAuth2User.getAttribute("kakao_account");
+
             if (kakaoAccount != null) {
-                email = (String) kakaoAccount.get("email");
-            }
-            Map<String, Object> profile = (Map<String, Object>) kakaoAccount.get("profile");
-            if (profile != null) {
-                name = (String) profile.get("nickname");
+                if (kakaoAccount.containsKey("email")) {
+                    email = (String) kakaoAccount.get("email");
+                }
+                Map<String, Object> profile = (Map<String, Object>) kakaoAccount.get("profile");
+                if (profile != null && profile.containsKey("nickname")) {
+                    name = (String) profile.get("nickname");
+                }
             }
         }
 
