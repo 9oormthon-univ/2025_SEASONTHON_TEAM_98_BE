@@ -64,7 +64,6 @@ public class MeetingService {
                 .hasAfterparty(dto.getHasAfterparty())
                 .maxParticipants(dto.getMaxParticipants())
                 .build();
-
         meetingRepository.save(meeting);
         return MeetingResponseDto.fromEntity(meeting, 0);
     }
