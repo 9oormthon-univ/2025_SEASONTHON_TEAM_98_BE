@@ -14,7 +14,13 @@ public class MeetingResponseDto {
     private Double locationLat;
     private Double locationLng;
 
-    public static MeetingResponseDto fromEntity(Meeting meeting) {
+    private Long hostId;       // ✅ 모임장 ID
+    private String hostName;   // ✅ 모임장 이름
+
+    private int currentParticipants; // ✅ 현재 인원
+    private Integer maxParticipants; // ✅ 제한 인원
+
+    public static MeetingResponseDto fromEntity(Meeting meeting, int currentParticipants) {
         return MeetingResponseDto.builder()
                 .id(meeting.getId())
                 .title(meeting.getTitle())
@@ -23,6 +29,10 @@ public class MeetingResponseDto {
                 .address(meeting.getAddress())
                 .locationLat(meeting.getLocationLat())
                 .locationLng(meeting.getLocationLng())
+                .hostId(meeting.getHost() != null ? meeting.getHost().getId() : null)
+                .hostName(meeting.getHost() != null ? meeting.getHost().getUsername() : null)
+                .currentParticipants(currentParticipants)
+                .maxParticipants(meeting.getMaxParticipants())
                 .build();
     }
 }

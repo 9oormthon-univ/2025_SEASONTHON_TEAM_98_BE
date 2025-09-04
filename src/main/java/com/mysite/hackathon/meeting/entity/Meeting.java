@@ -3,10 +3,11 @@ package com.mysite.hackathon.meeting.entity;
 import com.mysite.hackathon.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "meeting")
+@Table(name = "meetings")
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor @Builder
 public class Meeting {
@@ -24,7 +25,6 @@ public class Meeting {
     private Double locationLat;
     private Double locationLng;
     private String address;
-
     private String dong;
 
     private LocalDateTime startTime;
@@ -33,4 +33,6 @@ public class Meeting {
     private String restriction;
     private String genderLimit;
     private Boolean hasAfterparty;
+
+    private Integer maxParticipants; // ✅ 최대 인원
 }

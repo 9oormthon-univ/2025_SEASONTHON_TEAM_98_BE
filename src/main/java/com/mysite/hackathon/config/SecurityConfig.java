@@ -13,8 +13,16 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // CSRF 비활성화
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll() // 모든 요청 허용
+                        // Swagger 관련 경로 허용
+                        .requestMatchers(
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "/api/**"
+                        ).permitAll()
+                        // 나머지 요청도 허용
+                        .anyRequest().permitAll()
                 );
+
         return http.build();
     }
 }
