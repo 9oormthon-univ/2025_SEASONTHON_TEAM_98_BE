@@ -1,7 +1,7 @@
-package com.example.login.security;
+package com.example.login.security.auth;
 
-import com.example.login.model.User;
-import com.example.login.repository.UserRepository;
+import com.example.login.local_login.model.User;
+import com.example.login.local_login.repository.LocalUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private final LocalUserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

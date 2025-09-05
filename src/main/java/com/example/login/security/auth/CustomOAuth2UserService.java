@@ -1,7 +1,7 @@
-package com.example.login.security;
+package com.example.login.security.auth;
 
-import com.example.login.model.User;
-import com.example.login.repository.UserRepository;
+import com.example.login.local_login.model.User;
+import com.example.login.local_login.repository.LocalUserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -20,7 +20,7 @@ import java.util.Optional;
 @SuppressWarnings("unchecked")
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
-    private final UserRepository userRepository;
+    private final LocalUserRepository userRepository;
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
