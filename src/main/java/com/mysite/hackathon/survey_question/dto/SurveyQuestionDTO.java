@@ -1,4 +1,4 @@
-package com.mysite.hackathon.dto;
+package com.mysite.hackathon.survey_question.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

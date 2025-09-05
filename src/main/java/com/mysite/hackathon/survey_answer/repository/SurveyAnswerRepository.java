@@ -1,7 +1,6 @@
-package com.mysite.hackathon.repository;
+package com.mysite.hackathon.survey_answer.repository;
 
-import com.mysite.hackathon.entity.SurveyAnswer;
-import com.mysite.hackathon.entity.SurveyQuestion;
+import com.mysite.hackathon.survey_answer.entity.SurveyAnswer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

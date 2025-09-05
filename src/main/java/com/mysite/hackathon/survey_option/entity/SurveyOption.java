@@ -1,5 +1,6 @@
-package com.mysite.hackathon.entity;
+package com.mysite.hackathon.survey_option.entity;
 
+import com.mysite.hackathon.survey_question.entity.SurveyQuestion;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

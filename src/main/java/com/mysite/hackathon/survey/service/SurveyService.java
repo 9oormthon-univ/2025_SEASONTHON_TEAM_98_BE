@@ -1,8 +1,8 @@
-package com.mysite.hackathon.service;
+package com.mysite.hackathon.survey.service;
 
-import com.mysite.hackathon.dto.SurveyQuestionDTO;
-import com.mysite.hackathon.entity.SurveyQuestion;
-import com.mysite.hackathon.repository.SurveyQuestionRepository;
+import com.mysite.hackathon.survey_question.dto.SurveyQuestionDTO;
+import com.mysite.hackathon.survey_question.entity.SurveyQuestion;
+import com.mysite.hackathon.survey_question.repository.SurveyQuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

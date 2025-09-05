@@ -1,7 +1,7 @@
-package com.mysite.hackathon.controller;
+package com.mysite.hackathon.survey.controller;
 
-import com.mysite.hackathon.dto.SurveyQuestionDTO;
-import com.mysite.hackathon.service.SurveyService;
+import com.mysite.hackathon.survey.service.SurveyService;
+import com.mysite.hackathon.survey_question.dto.SurveyQuestionDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

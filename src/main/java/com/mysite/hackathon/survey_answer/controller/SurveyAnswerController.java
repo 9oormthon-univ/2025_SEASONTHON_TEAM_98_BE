@@ -1,7 +1,7 @@
-package com.mysite.hackathon.controller;
+package com.mysite.hackathon.survey_answer.controller;
 
-import com.mysite.hackathon.entity.SurveyAnswer;
-import com.mysite.hackathon.service.SurveyAnswerService;
+import com.mysite.hackathon.survey_answer.service.SurveyAnswerService;
+import com.mysite.hackathon.survey_answer.entity.SurveyAnswer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
