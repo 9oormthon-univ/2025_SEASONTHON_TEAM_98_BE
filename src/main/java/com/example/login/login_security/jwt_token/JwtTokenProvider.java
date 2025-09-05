@@ -1,5 +1,5 @@
 // JwtTokenProvider.java (수정된 코드)
-package com.example.login.jwt_login;
+package com.example.login.login_security.jwt_token;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

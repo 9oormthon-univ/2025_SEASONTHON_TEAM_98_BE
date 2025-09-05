@@ -18,13 +18,13 @@ public class AuthController {
 
     @GetMapping("/signup")
     public String signupForm() {
-        return "signup";
+        return "signup"; // signup.html 파일을 반환
     }
 
     @PostMapping("/signup")
     public String signup(@ModelAttribute User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
-        return "redirect:/login";
+        return "redirect:/login"; // 회원가입 성공 후 로그인 페이지로 리다이렉션
     }
 }

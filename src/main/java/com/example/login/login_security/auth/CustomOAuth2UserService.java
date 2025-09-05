@@ -1,4 +1,4 @@
-package com.example.login.security.auth;
+package com.example.login.login_security.auth;
 
 import com.example.login.local_login.model.User;
 import com.example.login.local_login.repository.LocalUserRepository;
@@ -48,6 +48,13 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
                 if (profile != null && profile.containsKey("nickname")) {
                     name = (String) profile.get("nickname");
                 }
+            }
+        }else if (registrationId.equals("naver")) {
+            Map<String, Object> response = oAuth2User.getAttribute("response");
+            if (response != null) {
+                oauth2Id = (String) response.get("id");
+                email = (String) response.get("email");
+                name = (String) response.get("name");
             }
         }
 

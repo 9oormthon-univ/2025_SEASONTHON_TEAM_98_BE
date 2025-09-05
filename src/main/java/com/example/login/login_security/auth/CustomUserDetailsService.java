@@ -1,4 +1,4 @@
-package com.example.login.security.auth;
+package com.example.login.login_security.auth;
 
 import com.example.login.local_login.model.User;
 import com.example.login.local_login.repository.LocalUserRepository;
