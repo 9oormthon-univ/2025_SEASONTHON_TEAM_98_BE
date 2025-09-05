@@ -1,7 +1,8 @@
-package com.mysite.hackathon;
+package com.mysite.hackathon.home_page;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 public class HackathonApplication {
@@ -9,5 +10,4 @@ public class HackathonApplication {
     public static void main(String[] args) {
         SpringApplication.run(HackathonApplication.class, args);
     }
-
 }

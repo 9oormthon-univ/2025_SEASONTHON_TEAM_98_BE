@@ -1,7 +1,7 @@
-package com.example.login.local_login.controller;
+package com.mysite.hackathon.user.controller;
 
-import com.example.login.local_login.model.User;
-import com.example.login.local_login.repository.LocalUserRepository;
+import com.mysite.hackathon.user.entity.User;
+import com.mysite.hackathon.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final LocalUserRepository userRepository;
+    private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/signup")

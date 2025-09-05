@@ -62,10 +62,10 @@
 
 
 
-package com.example.login.security;
+package com.mysite.hackathon.security;
 
-import com.example.login.security.auth.CustomOAuth2UserService;
-import com.example.login.security.auth.CustomUserDetailsService;
+import com.mysite.hackathon.security.auth.CustomOAuth2UserService;
+import com.mysite.hackathon.security.auth.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

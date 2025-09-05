@@ -1,6 +1,5 @@
-package com.example.login.jwt_login;
+package com.mysite.hackathon.jwt_login;
 
-import com.example.login.security.auth.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,7 +16,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private final com.example.login.jwt_login.JwtTokenProvider jwtTokenProvider;
+    private final JwtTokenProvider jwtTokenProvider;
     private final UserDetailsService localUserDetailsService;
 
     @Override

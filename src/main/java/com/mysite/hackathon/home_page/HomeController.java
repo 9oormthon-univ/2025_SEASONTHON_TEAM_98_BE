@@ -1,4 +1,4 @@
-package com.example.login.home_page;
+package com.mysite.hackathon.home_page;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

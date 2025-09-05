@@ -1,4 +1,4 @@
-package com.example.login.local_login.controller;
+package com.mysite.hackathon.user.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

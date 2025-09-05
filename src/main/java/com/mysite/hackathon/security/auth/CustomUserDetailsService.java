@@ -1,7 +1,7 @@
-package com.example.login.security.auth;
+package com.mysite.hackathon.security.auth;
 
-import com.example.login.local_login.model.User;
-import com.example.login.local_login.repository.LocalUserRepository;
+import com.mysite.hackathon.user.entity.User;
+import com.mysite.hackathon.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,20 +12,19 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final LocalUserRepository userRepository;
+    private final UserRepository userRepository; // ✅ UserRepository 로 변경
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        // 이메일로 데이터베이스에서 사용자 정보(User)를 찾아옵니다.
+        // 이메일로 사용자 조회
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
 
-        // User 엔티티의 정보를 사용하여 UserDetails 객체를 생성하여 반환합니다.
-        // Spring Security가 이 UserDetails 객체의 비밀번호와 사용자가 입력한 비밀번호를 비교합니다.
+        // User 엔티티 → Spring Security UserDetails 변환
         return org.springframework.security.core.userdetails.User.builder()
-                .username(user.getEmail())
-                .password(user.getPassword())
-                .roles("USER")
+                .username(user.getEmail())   // 이메일을 username 으로 사용
+                .password(user.getPassword()) // 비밀번호
+                .roles("USER")                // 기본 ROLE
                 .build();
     }
 }

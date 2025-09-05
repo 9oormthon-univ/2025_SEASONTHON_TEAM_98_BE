@@ -1,4 +1,4 @@
-package com.example.login.social_login.controller;
+package com.mysite.hackathon.social_login.controller;
 
 import org.springframework.stereotype.Controller;
 

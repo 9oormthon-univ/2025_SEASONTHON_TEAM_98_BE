@@ -1,7 +1,7 @@
-package com.example.login.security.auth;
+package com.mysite.hackathon.security.auth;
 
-import com.example.login.local_login.model.User;
-import com.example.login.local_login.repository.LocalUserRepository;
+import com.mysite.hackathon.user.entity.User;
+import com.mysite.hackathon.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -20,7 +20,7 @@ import java.util.Optional;
 @SuppressWarnings("unchecked")
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
-    private final LocalUserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
@@ -57,11 +57,12 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         if (existingUser.isPresent()) {
             user = existingUser.get();
         } else {
-            user = new User();
-            user.setOauth2Id(oauth2Id);
-            user.setProvider(registrationId);
-            user.setEmail(email);
-            user.setName(name);
+            user = User.builder()
+                    .oauth2Id(oauth2Id)
+                    .provider(registrationId)
+                    .email(email)
+                    .name(name)
+                    .build();
         }
         userRepository.save(user);
 
