@@ -39,3 +39,6 @@ spring:
             token-uri: https://kauth.kakao.com/oauth/token
             user-info-uri: https://kapi.kakao.com/v2/user/me
             user-name-attribute: id
+
+jwt:
+  secret: 750d33983a05349a46c6f17b43ef5fc6aac28bec305302780107a7379f67d3db
