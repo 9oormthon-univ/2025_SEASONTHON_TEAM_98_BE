@@ -40,13 +40,13 @@ out/
 *.class
 *.log
 
-# BlueJ files
+# BlueJ
 *.ctxt
 
-# Mobile Tools for Java (J2ME)
+# J2ME
 .mtj.tmp/
 
-# Package Files
+# Package files
 *.jar
 *.war
 *.nar
