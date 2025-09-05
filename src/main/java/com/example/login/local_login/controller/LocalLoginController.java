@@ -1,10 +1,10 @@
-package com.example.login.controller;
+package com.example.login.local_login.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class LoginController {
+public class LocalLoginController {
 
     @GetMapping("/login")
     public String login() {

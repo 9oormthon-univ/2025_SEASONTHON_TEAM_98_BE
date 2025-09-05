@@ -1,4 +1,4 @@
-package com.example.login.model;
+package com.example.login.local_login.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -16,11 +16,9 @@ public class User {
 
     private String password;
 
-    // 소셜 로그인 시 사용할 oauth2Id (직접 로그인 시에는 null)
     @Column(unique = true)
     private String oauth2Id;
 
-    // 소셜 로그인 시 사용할 provider (직접 로그인 시에는 null)
     private String provider;
 
     private String name;
