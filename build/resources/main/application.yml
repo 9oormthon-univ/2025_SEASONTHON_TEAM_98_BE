@@ -1,10 +1,13 @@
 spring:
+  # MySQL 데이터베이스 설정
   datasource:
-    url: jdbc:mysql://localhost:3306/hackathon?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: hackathon
-    password: 1234
+    # SQL 쿼리에서 'localhost'를 사용했으므로, 여기도 'localhost'를 사용합니다.
+    url: jdbc:mysql://localhost:3306/login?useSSL=false&serverTimezone=Asia/Seoul
+    # MySQL Workbench에서 만든 사용자 이름과 동일해야 합니다.
+    username: uni4
+    # MySQL Workbench에서 만든 비밀번호와 동일해야 합니다.
+    password: uni41234
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -13,6 +16,7 @@ spring:
       hibernate:
         format_sql: true
 
+  # Spring Security OAuth2 클라이언트 설정
   security:
     oauth2:
       client:
@@ -25,6 +29,7 @@ spring:
               - email
           kakao:
             client-id: f2c55a4afe421cc4192bc10d6f452b4b
+            #            client-secret: YOUR_KAKAO_CLIENT_SECRET
             redirect-uri: http://localhost:8080/login/oauth2/code/kakao
             authorization-grant-type: authorization_code
             client-name: Kakao
