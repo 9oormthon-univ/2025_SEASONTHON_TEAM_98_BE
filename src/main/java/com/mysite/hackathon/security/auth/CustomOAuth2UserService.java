@@ -1,7 +1,7 @@
 package com.mysite.hackathon.security.auth;
 
-import com.mysite.hackathon.user.entity.User;
-import com.mysite.hackathon.user.repository.UserRepository;
+import com.mysite.hackathon.local_login.model.User;                 // ✅ 수정
+import com.mysite.hackathon.local_login.repository.LocalUserRepository; // ✅ 수정
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -20,7 +20,7 @@ import java.util.Optional;
 @SuppressWarnings("unchecked")
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
-    private final UserRepository userRepository;
+    private final LocalUserRepository userRepository; // ✅ 수정
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
@@ -66,6 +66,9 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         }
         userRepository.save(user);
 
+        // ⚠️ 여기서 그냥 oAuth2User 를 리턴하면,
+        // DB에 저장한 User 정보가 SecurityContext 에 안 들어가.
+        // CustomOAuth2User 를 따로 만들어서 user.getId(), role 같은 걸 넘겨주는 게 좋아.
         return oAuth2User;
     }
 }

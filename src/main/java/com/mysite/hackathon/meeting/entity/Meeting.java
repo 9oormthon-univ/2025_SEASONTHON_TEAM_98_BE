@@ -1,9 +1,8 @@
 package com.mysite.hackathon.meeting.entity;
 
-import com.mysite.hackathon.user.entity.User;
+import com.mysite.hackathon.local_login.model.User;  // ✅ 수정된 import
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -11,7 +10,8 @@ import java.time.LocalDateTime;
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor @Builder
 public class Meeting {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -20,7 +20,7 @@ public class Meeting {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "host_id")
-    private User host;
+    private User host;   // ✅ local_login.model.User 사용
 
     private Double locationLat;
     private Double locationLng;
@@ -34,5 +34,5 @@ public class Meeting {
     private String genderLimit;
     private Boolean hasAfterparty;
 
-    private Integer maxParticipants; // ✅ 최대 인원
+    private Integer maxParticipants;
 }

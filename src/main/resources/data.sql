@@ -1,106 +1,132 @@
--- USERS 샘플
-INSERT INTO users (email, password, oauth2_id, provider, name, username, dong, location_lat, location_lng)
-VALUES
-    ('user1@gmail.com', '1234', NULL, NULL, '임서연', '볼링', '홍제제3동', 36.567813, 127.443862),
-    ('user2@gmail.com', '1234', NULL, NULL, '이서준', '축구', '천연동', 36.519073, 127.410612),
-    ('user3@gmail.com', '1234', NULL, NULL, '이서준', '축구', '북가좌제1동', 36.539587, 127.477151),
-    ('user4@gmail.com', '1234', NULL, NULL, '윤도현', '농구', '남가좌제1동', 36.538777, 127.452645),
-    ('user5@gmail.com', '1234', NULL, NULL, '정민서', '배드민턴', '북아현동', 36.538763, 127.419585),
-    ('user6@gmail.com', '1234', NULL, NULL, '정하늘', '배드민턴', '남가좌제1동', 36.535793, 127.469723),
-    ('user7@gmail.com', '1234', NULL, NULL, '박서준', '배드민턴', '홍제제3동', 36.575254, 127.420915),
-    ('user8@gmail.com', '1234', NULL, NULL, '이서준', '볼링', '연희동', 36.549252, 127.451973),
-    ('user9@gmail.com', '1234', NULL, NULL, '정민서', '요리', '천연동', 36.526557, 127.455277),
-    ('user10@gmail.com', '1234', NULL, NULL, '조민준', '배드민턴', '홍제제2동', 36.541621, 127.477727),
-    ('user11@gmail.com', '1234', NULL, NULL, '조민준', '요리', '홍제제1동', 36.573551, 127.446115),
-    ('user12@gmail.com', '1234', NULL, NULL, '임서연', '축구', '홍은제1동', 36.573222, 127.423039),
-    ('user13@gmail.com', '1234', NULL, NULL, '조민준', '요리', '홍제제1동', 36.538559, 127.455813),
-    ('user14@gmail.com', '1234', NULL, NULL, '정민서', '볼링', '북가좌제1동', 36.578389, 127.467731),
-    ('user15@gmail.com', '1234', NULL, NULL, '임서연', '농구', '홍은제2동', 36.534905, 127.478854),
-    ('user16@gmail.com', '1234', NULL, NULL, '한도현', '요리', '북가좌제2동', 36.553333, 127.47477),
-    ('user17@gmail.com', '1234', NULL, NULL, '박민준', '요리', '홍제제1동', 36.537768, 127.438871),
-    ('user18@gmail.com', '1234', NULL, NULL, '최수아', '볼링', '홍제제2동', 36.559727, 127.494238),
-    ('user19@gmail.com', '1234', NULL, NULL, '최수아', '볼링', '북가좌제2동', 36.524917, 127.436458),
-    ('user20@gmail.com', '1234', NULL, NULL, '임서연', '축구', '북아현동', 36.57767, 127.493677),
-    ('user21@gmail.com', '1234', NULL, NULL, '장예린', '농구', '북가좌제2동', 36.568929, 127.479758),
-    ('user22@gmail.com', '1234', NULL, NULL, '최하준', '농구', '홍제제1동', 36.576896, 127.418826),
-    ('user23@gmail.com', '1234', NULL, NULL, '이서준', '요리', '연희동', 36.570212, 127.496322),
-    ('user24@gmail.com', '1234', NULL, NULL, '윤도현', '농구', '연희동', 36.551783, 127.44893),
-    ('user25@gmail.com', '1234', NULL, NULL, '조민준', '배드민턴', '남가좌제1동', 36.559246, 127.454937),
-    ('user26@gmail.com', '1234', NULL, NULL, '윤하준', '배드민턴', '홍제제3동', 36.541096, 127.42853),
-    ('user27@gmail.com', '1234', NULL, NULL, '박서준', '농구', '연희동', 36.512321, 127.452113),
-    ('user28@gmail.com', '1234', NULL, NULL, '임서연', '축구', '홍은제2동', 36.541219, 127.421951),
-    ('user29@gmail.com', '1234', NULL, NULL, '최수아', '요리', '홍제제2동', 36.525431, 127.487456),
-    ('user30@gmail.com', '1234', NULL, NULL, '임서연', '볼링', '홍제제3동', 36.52338, 127.476514),
-    ('user31@gmail.com', '1234', NULL, NULL, '임도윤', '농구', '북아현동', 36.537993, 127.477547),
-    ('user32@gmail.com', '1234', NULL, NULL, '조민준', '볼링', '북가좌제2동', 36.539028, 127.482903),
-    ('user33@gmail.com', '1234', NULL, NULL, '임도윤', '요리', '연희동', 36.582687, 127.485245),
-    ('user34@gmail.com', '1234', NULL, NULL, '장민서', '배드민턴', '남가좌제1동', 36.502791, 127.453674),
-    ('user35@gmail.com', '1234', NULL, NULL, '윤하준', '축구', '남가좌제2동', 36.55193, 127.414255),
-    ('user36@gmail.com', '1234', NULL, NULL, '한도현', '배드민턴', '홍제제2동', 36.517371, 127.453135),
-    ('user37@gmail.com', '1234', NULL, NULL, '이서준', '요리', '남가좌제2동', 36.577523, 127.445335),
-    ('user38@gmail.com', '1234', NULL, NULL, '박지우', '배드민턴', '홍은제2동', 36.591741, 127.45987),
-    ('user39@gmail.com', '1234', NULL, NULL, '임도윤', '배드민턴', '연희동', 36.500211, 127.438372),
-    ('user40@gmail.com', '1234', NULL, NULL, '박지우', '요리', '북가좌제1동', 36.555388, 127.41809),
-    ('user41@gmail.com', NULL, 'google-1041', 'google', '한유진', '볼링', '홍은제1동', 36.550462, 127.469949),
-    ('user42@gmail.com', NULL, 'google-1042', 'google', '조민준', '요리', '홍은제2동', 36.502491, 127.49925),
-    ('user43@gmail.com', NULL, 'google-1043', 'google', '조수아', '축구', '홍제제2동', 36.544343, 127.462581),
-    ('user44@gmail.com', NULL, 'google-1044', 'google', '박지우', '축구', '남가좌제2동', 36.52692, 127.484629),
-    ('user45@gmail.com', NULL, 'google-1045', 'google', '최수아', '배드민턴', '홍은제1동', 36.512307, 127.402747),
-    ('user46@gmail.com', NULL, 'google-1046', 'google', '윤하준', '배드민턴', '연희동', 36.531792, 127.487244),
-    ('user47@gmail.com', NULL, 'google-1047', 'google', '장민서', '축구', '남가좌제2동', 36.514981, 127.451785),
-    ('user48@gmail.com', NULL, 'google-1048', 'google', '윤도현', '요리', '북가좌제1동', 36.589992, 127.463479),
-    ('user49@gmail.com', NULL, 'google-1049', 'google', '최하준', '볼링', '연희동', 36.524502, 127.457665),
-    ('user50@gmail.com', NULL, 'google-1050', 'google', '한도현', '축구', '북가좌제2동', 36.5315, 127.442809),
-    ('user51@gmail.com', NULL, 'google-1051', 'google', '박서준', '축구', '북아현동', 36.581126, 127.411335),
-    ('user52@gmail.com', NULL, 'google-1052', 'google', '장예린', '볼링', '홍은제1동', 36.520597, 127.401202),
-    ('user53@gmail.com', NULL, 'google-1053', 'google', '박지우', '농구', '연희동', 36.548144, 127.415256),
-    ('user54@gmail.com', NULL, 'google-1054', 'google', '박서준', '요리', '홍제제1동', 36.536766, 127.404313),
-    ('user55@gmail.com', NULL, 'google-1055', 'google', '조민준', '배드민턴', '홍은제2동', 36.518158, 127.400709),
-    ('user56@gmail.com', NULL, 'google-1056', 'google', '박지우', '축구', '홍은제1동', 36.547664, 127.426333),
-    ('user57@gmail.com', NULL, 'google-1057', 'google', '박서준', '농구', '홍은제2동', 36.582473, 127.460787),
-    ('user58@gmail.com', NULL, 'google-1058', 'google', '김수현', '볼링', '남가좌제1동', 36.578791, 127.414111),
-    ('user59@gmail.com', NULL, 'google-1059', 'google', '최수아', '축구', '북가좌제1동', 36.559498, 127.486438),
-    ('user60@gmail.com', NULL, 'google-1060', 'google', '박서준', '배드민턴', '북아현동', 36.545293, 127.421141),
-    ('user61@gmail.com', NULL, 'google-1061', 'google', '이서준', '축구', '북가좌제2동', 36.509866, 127.450021),
-    ('user62@gmail.com', NULL, 'google-1062', 'google', '장예린', '볼링', '홍제제1동', 36.593108, 127.465351),
-    ('user63@gmail.com', NULL, 'google-1063', 'google', '윤도현', '축구', '홍제제1동', 36.571282, 127.417948),
-    ('user64@gmail.com', NULL, 'google-1064', 'google', '김수현', '요리', '북아현동', 36.598319, 127.407778),
-    ('user65@gmail.com', NULL, 'google-1065', 'google', '최하준', '볼링', '홍제제1동', 36.56134, 127.491061),
-    ('user66@gmail.com', NULL, 'google-1066', 'google', '윤하준', '볼링', '홍은제2동', 36.586346, 127.462143),
-    ('user67@gmail.com', NULL, 'google-1067', 'google', '한유진', '볼링', '천연동', 36.556817, 127.447767),
-    ('user68@gmail.com', NULL, 'google-1068', 'google', '박지우', '요리', '연희동', 36.50358, 127.481555),
-    ('user69@gmail.com', NULL, 'google-1069', 'google', '장예린', '볼링', '남가좌제1동', 36.523865, 127.416483),
-    ('user70@gmail.com', NULL, 'google-1070', 'google', '정하늘', '볼링', '남가좌제1동', 36.582636, 127.460379),
-    ('user71@kakao.com', NULL, 'kakao-2071', 'kakao', '임도윤', '볼링', '홍제제3동', 36.512729, 127.496577),
-    ('user72@kakao.com', NULL, 'kakao-2072', 'kakao', '임서연', '축구', '연희동', 36.587906, 127.441231),
-    ('user73@kakao.com', NULL, 'kakao-2073', 'kakao', '정민서', '축구', '연희동', 36.574878, 127.426432),
-    ('user74@kakao.com', NULL, 'kakao-2074', 'kakao', '윤도현', '배드민턴', '연희동', 36.569567, 127.440379),
-    ('user75@kakao.com', NULL, 'kakao-2075', 'kakao', '박민준', '농구', '북가좌제1동', 36.556737, 127.417564),
-    ('user76@kakao.com', NULL, 'kakao-2076', 'kakao', '박민준', '배드민턴', '남가좌제1동', 36.557319, 127.431886),
-    ('user77@kakao.com', NULL, 'kakao-2077', 'kakao', '임서연', '배드민턴', '홍제제2동', 36.521103, 127.409055),
-    ('user78@kakao.com', NULL, 'kakao-2078', 'kakao', '정하늘', '요리', '남가좌제1동', 36.576861, 127.468402),
-    ('user79@kakao.com', NULL, 'kakao-2079', 'kakao', '정하늘', '볼링', '홍은제1동', 36.586904, 127.405146),
-    ('user80@kakao.com', NULL, 'kakao-2080', 'kakao', '최하준', '농구', '북아현동', 36.593794, 127.434624),
-    ('user81@kakao.com', NULL, 'kakao-2081', 'kakao', '정민서', '축구', '천연동', 36.544546, 127.488511),
-    ('user82@kakao.com', NULL, 'kakao-2082', 'kakao', '이서준', '배드민턴', '남가좌제1동', 36.566081, 127.435817),
-    ('user83@kakao.com', NULL, 'kakao-2083', 'kakao', '박서준', '축구', '북가좌제2동', 36.568976, 127.46688),
-    ('user84@kakao.com', NULL, 'kakao-2084', 'kakao', '한도현', '축구', '연희동', 36.563291, 127.457194),
-    ('user85@kakao.com', NULL, 'kakao-2085', 'kakao', '박민준', '농구', '남가좌제1동', 36.525296, 127.410374),
-    ('user86@kakao.com', NULL, 'kakao-2086', 'kakao', '박지우', '농구', '홍제제1동', 36.535615, 127.447865),
-    ('user87@kakao.com', NULL, 'kakao-2087', 'kakao', '박서준', '축구', '홍제제3동', 36.58079, 127.410595),
-    ('user88@kakao.com', NULL, 'kakao-2088', 'kakao', '윤도현', '볼링', '남가좌제1동', 36.526381, 127.44402),
-    ('user89@kakao.com', NULL, 'kakao-2089', 'kakao', '한도현', '요리', '홍제제1동', 36.526391, 127.445568),
-    ('user90@kakao.com', NULL, 'kakao-2090', 'kakao', '윤하준', '요리', '홍제제2동', 36.576663, 127.449969),
-    ('user91@kakao.com', NULL, 'kakao-2091', 'kakao', '임도윤', '요리', '천연동', 36.504933, 127.438498),
-    ('user92@kakao.com', NULL, 'kakao-2092', 'kakao', '최하준', '축구', '홍제제3동', 36.509384, 127.446846),
-    ('user93@kakao.com', NULL, 'kakao-2093', 'kakao', '윤하준', '볼링', '홍제제2동', 36.507143, 127.450149),
-    ('user94@kakao.com', NULL, 'kakao-2094', 'kakao', '한도현', '농구', '홍은제2동', 36.506475, 127.436529),
-    ('user95@kakao.com', NULL, 'kakao-2095', 'kakao', '최하준', '축구', '남가좌제1동', 36.507439, 127.450428),
-    ('user96@kakao.com', NULL, 'kakao-2096', 'kakao', '이서준', '요리', '북가좌제1동', 36.535104, 127.428788),
-    ('user97@kakao.com', NULL, 'kakao-2097', 'kakao', '박서준', '배드민턴', '북가좌제1동', 36.571901, 127.45947),
-    ('user98@kakao.com', NULL, 'kakao-2098', 'kakao', '조수아', '배드민턴', '연희동', 36.550281, 127.454467),
-    ('user99@kakao.com', NULL, 'kakao-2099', 'kakao', '윤하준', '축구', '천연동', 36.591053, 127.457724),
-    ('user100@kakao.com', NULL, 'kakao-2100', 'kakao', '임서연', '요리', '남가좌제2동', 36.575968, 127.437387);
+-- USERS (1~10)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user1@gmail.com', '1234', NULL, NULL, '임서연'),
+                                                                  ('user2@gmail.com', '1234', NULL, NULL, '이서준'),
+                                                                  ('user3@gmail.com', '1234', NULL, NULL, '정민서'),
+                                                                  ('user4@gmail.com', '1234', NULL, NULL, '윤도현'),
+                                                                  ('user5@gmail.com', '1234', NULL, NULL, '박서준'),
+                                                                  ('user6@gmail.com', '1234', NULL, NULL, '조민준'),
+                                                                  ('user7@gmail.com', '1234', NULL, NULL, '김수현'),
+                                                                  ('user8@gmail.com', '1234', NULL, NULL, '최하준'),
+                                                                  ('user9@gmail.com', '1234', NULL, NULL, '한유진'),
+                                                                  ('user10@gmail.com', '1234', NULL, NULL, '장예린');
+
+-- USERS (11~20, Google 계정)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user11@gmail.com', NULL, 'google-1011', 'google', '임서연'),
+                                                                  ('user12@gmail.com', NULL, 'google-1012', 'google', '이서준'),
+                                                                  ('user13@gmail.com', NULL, 'google-1013', 'google', '정민서'),
+                                                                  ('user14@gmail.com', NULL, 'google-1014', 'google', '윤도현'),
+                                                                  ('user15@gmail.com', NULL, 'google-1015', 'google', '박서준'),
+                                                                  ('user16@gmail.com', NULL, 'google-1016', 'google', '조민준'),
+                                                                  ('user17@gmail.com', NULL, 'google-1017', 'google', '김수현'),
+                                                                  ('user18@gmail.com', NULL, 'google-1018', 'google', '최하준'),
+                                                                  ('user19@gmail.com', NULL, 'google-1019', 'google', '한유진'),
+                                                                  ('user20@gmail.com', NULL, 'google-1020', 'google', '장예린');
+
+-- USERS (21~30)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user21@gmail.com', NULL, 'google-1021', 'google', '임도윤'),
+                                                                  ('user22@gmail.com', NULL, 'google-1022', 'google', '정하늘'),
+                                                                  ('user23@gmail.com', NULL, 'google-1023', 'google', '최수아'),
+                                                                  ('user24@gmail.com', NULL, 'google-1024', 'google', '윤하준'),
+                                                                  ('user25@gmail.com', NULL, 'google-1025', 'google', '박지우'),
+                                                                  ('user26@gmail.com', NULL, 'google-1026', 'google', '조수아'),
+                                                                  ('user27@gmail.com', NULL, 'google-1027', 'google', '한도현'),
+                                                                  ('user28@gmail.com', NULL, 'google-1028', 'google', '장민서'),
+                                                                  ('user29@gmail.com', NULL, 'google-1029', 'google', '이도윤'),
+                                                                  ('user30@gmail.com', NULL, 'google-1030', 'google', '임하늘');
+
+-- USERS (31~40)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user31@gmail.com', NULL, 'google-1031', 'google', '최유진'),
+                                                                  ('user32@gmail.com', NULL, 'google-1032', 'google', '조민서'),
+                                                                  ('user33@gmail.com', NULL, 'google-1033', 'google', '윤하늘'),
+                                                                  ('user34@gmail.com', NULL, 'google-1034', 'google', '박수아'),
+                                                                  ('user35@gmail.com', NULL, 'google-1035', 'google', '김민준'),
+                                                                  ('user36@gmail.com', NULL, 'google-1036', 'google', '장도윤'),
+                                                                  ('user37@gmail.com', NULL, 'google-1037', 'google', '최하늘'),
+                                                                  ('user38@gmail.com', NULL, 'google-1038', 'google', '정수아'),
+                                                                  ('user39@gmail.com', NULL, 'google-1039', 'google', '윤지우'),
+                                                                  ('user40@gmail.com', NULL, 'google-1040', 'google', '정하늘');
+
+-- USERS (41~50, Kakao 계정)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user41@kakao.com', NULL, 'kakao-2041', 'kakao', '임서연'),
+                                                                  ('user42@kakao.com', NULL, 'kakao-2042', 'kakao', '이서준'),
+                                                                  ('user43@kakao.com', NULL, 'kakao-2043', 'kakao', '정민서'),
+                                                                  ('user44@kakao.com', NULL, 'kakao-2044', 'kakao', '윤도현'),
+                                                                  ('user45@kakao.com', NULL, 'kakao-2045', 'kakao', '박서준'),
+                                                                  ('user46@kakao.com', NULL, 'kakao-2046', 'kakao', '조민준'),
+                                                                  ('user47@kakao.com', NULL, 'kakao-2047', 'kakao', '김수현'),
+                                                                  ('user48@kakao.com', NULL, 'kakao-2048', 'kakao', '최하준'),
+                                                                  ('user49@kakao.com', NULL, 'kakao-2049', 'kakao', '한유진'),
+                                                                  ('user50@kakao.com', NULL, 'kakao-2050', 'kakao', '장예린');
+
+-- USERS (51~60)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user51@kakao.com', NULL, 'kakao-2051', 'kakao', '임도윤'),
+                                                                  ('user52@kakao.com', NULL, 'kakao-2052', 'kakao', '정하늘'),
+                                                                  ('user53@kakao.com', NULL, 'kakao-2053', 'kakao', '최수아'),
+                                                                  ('user54@kakao.com', NULL, 'kakao-2054', 'kakao', '윤하준'),
+                                                                  ('user55@kakao.com', NULL, 'kakao-2055', 'kakao', '박지우'),
+                                                                  ('user56@kakao.com', NULL, 'kakao-2056', 'kakao', '조수아'),
+                                                                  ('user57@kakao.com', NULL, 'kakao-2057', 'kakao', '한도현'),
+                                                                  ('user58@kakao.com', NULL, 'kakao-2058', 'kakao', '장민서'),
+                                                                  ('user59@kakao.com', NULL, 'kakao-2059', 'kakao', '이도윤'),
+                                                                  ('user60@kakao.com', NULL, 'kakao-2060', 'kakao', '임하늘');
+
+-- USERS (61~70)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user61@kakao.com', NULL, 'kakao-2061', 'kakao', '최유진'),
+                                                                  ('user62@kakao.com', NULL, 'kakao-2062', 'kakao', '조민서'),
+                                                                  ('user63@kakao.com', NULL, 'kakao-2063', 'kakao', '윤하늘'),
+                                                                  ('user64@kakao.com', NULL, 'kakao-2064', 'kakao', '박수아'),
+                                                                  ('user65@kakao.com', NULL, 'kakao-2065', 'kakao', '김민준'),
+                                                                  ('user66@kakao.com', NULL, 'kakao-2066', 'kakao', '장도윤'),
+                                                                  ('user67@kakao.com', NULL, 'kakao-2067', 'kakao', '최하늘'),
+                                                                  ('user68@kakao.com', NULL, 'kakao-2068', 'kakao', '정수아'),
+                                                                  ('user69@kakao.com', NULL, 'kakao-2069', 'kakao', '윤지우'),
+                                                                  ('user70@kakao.com', NULL, 'kakao-2070', 'kakao', '최하준');
+
+-- USERS (71~80)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user71@kakao.com', NULL, 'kakao-2071', 'kakao', '임도윤'),
+                                                                  ('user72@kakao.com', NULL, 'kakao-2072', 'kakao', '임서연'),
+                                                                  ('user73@kakao.com', NULL, 'kakao-2073', 'kakao', '정민서'),
+                                                                  ('user74@kakao.com', NULL, 'kakao-2074', 'kakao', '윤도현'),
+                                                                  ('user75@kakao.com', NULL, 'kakao-2075', 'kakao', '박민준'),
+                                                                  ('user76@kakao.com', NULL, 'kakao-2076', 'kakao', '정하늘'),
+                                                                  ('user77@kakao.com', NULL, 'kakao-2077', 'kakao', '한유진'),
+                                                                  ('user78@kakao.com', NULL, 'kakao-2078', 'kakao', '장예린'),
+                                                                  ('user79@kakao.com', NULL, 'kakao-2079', 'kakao', '이서준'),
+                                                                  ('user80@kakao.com', NULL, 'kakao-2080', 'kakao', '최수아');
+
+-- USERS (81~90)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user81@kakao.com', NULL, 'kakao-2081', 'kakao', '박서준'),
+                                                                  ('user82@kakao.com', NULL, 'kakao-2082', 'kakao', '조민준'),
+                                                                  ('user83@kakao.com', NULL, 'kakao-2083', 'kakao', '김수현'),
+                                                                  ('user84@kakao.com', NULL, 'kakao-2084', 'kakao', '정민서'),
+                                                                  ('user85@kakao.com', NULL, 'kakao-2085', 'kakao', '윤도현'),
+                                                                  ('user86@kakao.com', NULL, 'kakao-2086', 'kakao', '박지우'),
+                                                                  ('user87@kakao.com', NULL, 'kakao-2087', 'kakao', '조수아'),
+                                                                  ('user88@kakao.com', NULL, 'kakao-2088', 'kakao', '한도현'),
+                                                                  ('user89@kakao.com', NULL, 'kakao-2089', 'kakao', '장민서'),
+                                                                  ('user90@kakao.com', NULL, 'kakao-2090', 'kakao', '최하준');
+
+-- USERS (91~100)
+INSERT INTO users (email, password, oauth2id, provider, name) VALUES
+                                                                  ('user91@kakao.com', NULL, 'kakao-2091', 'kakao', '임도윤'),
+                                                                  ('user92@kakao.com', NULL, 'kakao-2092', 'kakao', '최하준'),
+                                                                  ('user93@kakao.com', NULL, 'kakao-2093', 'kakao', '윤하준'),
+                                                                  ('user94@kakao.com', NULL, 'kakao-2094', 'kakao', '한도현'),
+                                                                  ('user95@kakao.com', NULL, 'kakao-2095', 'kakao', '최수아'),
+                                                                  ('user96@kakao.com', NULL, 'kakao-2096', 'kakao', '이서준'),
+                                                                  ('user97@kakao.com', NULL, 'kakao-2097', 'kakao', '박서준'),
+                                                                  ('user98@kakao.com', NULL, 'kakao-2098', 'kakao', '조수아'),
+                                                                  ('user99@kakao.com', NULL, 'kakao-2099', 'kakao', '윤하준'),
+                                                                  ('user100@kakao.com', NULL, 'kakao-2100', 'kakao', '임서연');
 
 -- MEETINGS 샘플
 INSERT INTO meetings

@@ -6,7 +6,7 @@ import com.mysite.hackathon.global.exception.ParticipationNotFoundException;
 import com.mysite.hackathon.participant.entity.MeetingParticipant;
 import com.mysite.hackathon.participant.repository.ParticipantRepository;
 import com.mysite.hackathon.meeting.entity.Meeting;
-import com.mysite.hackathon.user.entity.User;
+import com.mysite.hackathon.local_login.model.User; // ✅ 수정
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +30,7 @@ public class ParticipantService {
 
         MeetingParticipant participant = MeetingParticipant.builder()
                 .meeting(meeting)
-                .user(user)
+                .user(user)   // ✅ local_login.model.User 사용
                 .joinedAt(LocalDateTime.now())
                 .build();
 

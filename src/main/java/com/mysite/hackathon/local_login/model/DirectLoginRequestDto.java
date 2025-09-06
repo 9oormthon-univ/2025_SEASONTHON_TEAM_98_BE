@@ -1,4 +1,4 @@
-package com.mysite.hackathon.user.dto;
+package com.mysite.hackathon.local_login.model;
 
 import lombok.Data;
 

@@ -6,8 +6,8 @@ import com.mysite.hackathon.participant.entity.MeetingParticipant;
 import com.mysite.hackathon.participant.service.ParticipantService;
 import com.mysite.hackathon.meeting.entity.Meeting;
 import com.mysite.hackathon.meeting.repository.MeetingRepository;
-import com.mysite.hackathon.user.entity.User;
-import com.mysite.hackathon.user.repository.UserRepository;
+import com.mysite.hackathon.local_login.model.User;                 // ✅ 수정
+import com.mysite.hackathon.local_login.repository.LocalUserRepository; // ✅ 수정
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 public class ParticipantController {
     private final ParticipantService participantService;
     private final MeetingRepository meetingRepository;
-    private final UserRepository userRepository;
+    private final LocalUserRepository userRepository;  // ✅ 수정
 
     @PostMapping("/join")
     public ResponseEntity<ParticipantResponseDto> joinMeeting(
@@ -27,7 +27,7 @@ public class ParticipantController {
     ) {
         Meeting meeting = meetingRepository.findById(meetingId)
                 .orElseThrow(() -> new RuntimeException("모임을 찾을 수 없습니다."));
-        User user = userRepository.findById(request.getUserId())
+        User user = userRepository.findById(request.getUserId())   // ✅ local_login.model.User
                 .orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."));
 
         MeetingParticipant participant = participantService.joinMeeting(meeting, user);
@@ -41,7 +41,7 @@ public class ParticipantController {
     ) {
         Meeting meeting = meetingRepository.findById(meetingId)
                 .orElseThrow(() -> new RuntimeException("모임을 찾을 수 없습니다."));
-        User user = userRepository.findById(request.getUserId())
+        User user = userRepository.findById(request.getUserId())   // ✅ local_login.model.User
                 .orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."));
 
         participantService.cancelJoin(meeting, user);

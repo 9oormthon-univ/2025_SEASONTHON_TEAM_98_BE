@@ -1,31 +1,30 @@
-package com.mysite.hackathon.user.controller;
+package com.mysite.hackathon.local_login.controller;
 
-import com.mysite.hackathon.user.entity.User;
-import com.mysite.hackathon.user.repository.UserRepository;
+import com.mysite.hackathon.local_login.model.User;
+import com.mysite.hackathon.local_login.repository.LocalUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final UserRepository userRepository;
+    private final LocalUserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/signup")
     public String signupForm() {
-        return "signup";
+        return "signup"; // signup.html 파일을 반환
     }
 
     @PostMapping("/signup")
     public String signup(@ModelAttribute User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
-        return "redirect:/login";
+        return "redirect:/login"; // 회원가입 성공 후 로그인 페이지로 리다이렉션
     }
 }

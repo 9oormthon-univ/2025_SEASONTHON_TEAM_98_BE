@@ -9,7 +9,6 @@ import com.mysite.hackathon.meeting.entity.Meeting;
 import com.mysite.hackathon.meeting.repository.MeetingRepository;
 import com.mysite.hackathon.participant.entity.MeetingParticipant;
 import com.mysite.hackathon.participant.repository.ParticipantRepository;
-import com.mysite.hackathon.user.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -114,7 +113,7 @@ public class MeetingService {
         return participants.stream()
                 .map(p -> new ParticipantInfoDto(
                         p.getUser().getId(),
-                        p.getUser().getUsername()
+                        p.getUser().getName()   // ✅ username → name
                 ))
                 .collect(Collectors.toList());
     }
@@ -125,10 +124,8 @@ public class MeetingService {
         Meeting meeting = meetingRepository.findById(meetingId)
                 .orElseThrow(() -> new MeetingNotFoundException(meetingId));
 
-        User user = new User();
-        user.setId(userId);
-
-        boolean joined = participantRepository.findByMeetingAndUser(meeting, user).isPresent();
+        // ✅ User 객체 생성 없이 userId 직접 사용
+        boolean joined = participantRepository.findByMeetingAndUser_Id(meeting, userId).isPresent();
 
         return new ParticipationStatusDto(
                 meetingId,

@@ -3,8 +3,11 @@ package com.mysite.hackathon.meeting.dto;
 import com.mysite.hackathon.meeting.entity.Meeting;
 import lombok.*;
 
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class MeetingResponseDto {
     private Long id;
     private String title;
@@ -30,7 +33,7 @@ public class MeetingResponseDto {
                 .locationLat(meeting.getLocationLat())
                 .locationLng(meeting.getLocationLng())
                 .hostId(meeting.getHost() != null ? meeting.getHost().getId() : null)
-                .hostName(meeting.getHost() != null ? meeting.getHost().getUsername() : null)
+                .hostName(meeting.getHost() != null ? meeting.getHost().getName() : null) // ✅ 수정됨
                 .currentParticipants(currentParticipants)
                 .maxParticipants(meeting.getMaxParticipants())
                 .build();
