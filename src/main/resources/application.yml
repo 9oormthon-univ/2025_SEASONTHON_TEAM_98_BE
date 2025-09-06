@@ -7,11 +7,17 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create   # 실행시 테이블 자동 생성
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+    defer-datasource-initialization: true   # ✅ JPA 테이블 생성 이후 data.sql 실행
+
+  sql:
+    init:
+      mode: always                     # 항상 data.sql 실행
+      defer-datasource-initialization: true   # ✅ 여기서도 보장
 
   security:
     oauth2:
